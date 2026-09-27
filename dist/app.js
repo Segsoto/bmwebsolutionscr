@@ -1,7 +1,7 @@
 const isEnglish = document.documentElement.lang === 'en';
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.navlinks');
-menu?.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); nav.classList.toggle('open', open); menu.textContent = open ? (isEnglish ? 'Close' : 'Cerrar') : 'Menú'; });
+menu?.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); nav.classList.toggle('open', open); menu.textContent = open ? (isEnglish ? 'Close' : 'Cerrar') : (isEnglish ? 'Menu' : 'Menú'); });
 document.addEventListener('keydown', e => { if(e.key === 'Escape' && nav?.classList.contains('open')) { menu.click(); menu.focus(); } });
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('video').forEach(video => {
@@ -25,3 +25,41 @@ form?.addEventListener('submit', event => {
  const link = document.createElement('a'); link.href = target; link.target = '_blank'; link.rel = 'noopener'; link.textContent = isEnglish ? 'Open WhatsApp' : 'Abrir WhatsApp'; link.className = 'text-link'; status.append(link);
  window.open(target, '_blank', 'noopener');
 });
+
+const chat = document.querySelector('.sales-chat');
+const launch = chat?.querySelector('.chat-launch');
+const panel = chat?.querySelector('.chat-panel');
+const closeChat = chat?.querySelector('.chat-close');
+const options = [...(chat?.querySelectorAll('[data-topic]') || [])];
+const details = chat?.querySelector('#chat-details');
+const send = chat?.querySelector('.chat-send');
+let topic = '';
+const setChatOpen = open => {
+  if (!panel) return;
+  panel.hidden = !open;
+  launch.setAttribute('aria-expanded', String(open));
+  if (open) closeChat.focus(); else launch.focus();
+};
+launch?.addEventListener('click', () => setChatOpen(panel.hidden));
+closeChat?.addEventListener('click', () => setChatOpen(false));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && panel && !panel.hidden) setChatOpen(false);
+});
+const updateChatLink = () => {
+  if (!send) return;
+  const topics = isEnglish
+    ? {website:'a website',store:'an online store',software:'custom software',guidance:'guidance for my digital project'}
+    : {website:'una página web',store:'una tienda en línea',software:'software a medida',guidance:'orientación para mi proyecto digital'};
+  let message = isEnglish ? 'Hello, I would like to discuss ' : 'Hola, quiero conversar sobre ';
+  message += topics[topic] || (isEnglish ? 'a project for my business' : 'un proyecto para mi negocio');
+  const description = details.value.trim();
+  if (description) message += '\n\n' + (isEnglish ? 'My business and idea: ' : 'Mi negocio y mi idea: ') + description;
+  send.href = 'https://wa.me/50660233159?text=' + encodeURIComponent(message);
+};
+options.forEach(option => option.addEventListener('click', () => {
+  topic = option.dataset.topic;
+  options.forEach(item => item.setAttribute('aria-pressed', String(item === option)));
+  updateChatLink();
+}));
+details?.addEventListener('input', updateChatLink);
+send?.addEventListener('click', updateChatLink);

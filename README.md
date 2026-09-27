@@ -6,16 +6,17 @@ Sitio estático bilingüe. El contenido final está en `dist/`, listo para aloja
 
 - Inicio, servicios, proyectos, planes, contacto y plantillas, en español e inglés.
 - Los 9 proyectos actuales y las 5 plantillas del sitio original.
-- Los 4 planes publicados: Starter USD 40/mes, Business USD 60/mes, tienda USD 150/mes y Elite por cotización.
+- Soluciones para sitios de presentación, sitios de crecimiento, tiendas en línea y software a medida, sin precios publicados.
 - Equipo actual: Brandon Soto, Manfred Zuñiga y Brandon Garro.
-- Logotipo, dos videos, fotografía y tres capturas reutilizadas del sitio del propietario.
+- Logotipo, dos videos, fotografía y capturas reales de las páginas de inicio de AlmaBela, Abogados de la Guácima, Charlie Mensajería y CR Granimar. Los otros proyectos permanecen enlazados con una vista previa pendiente hasta contar con capturas verificables.
+- Asistente flotante con opciones de servicio y texto libre; prepara un mensaje contextual para WhatsApp. No envía mensajes por sí solo ni simula una conversación con IA.
 - Formulario accesible que prepara un mensaje para WhatsApp. El visitante revisa y envía el mensaje desde WhatsApp; no se afirma haber enviado automáticamente una consulta ni se guardan datos en un servidor.
 
 ## Fuentes y decisiones
 
 Se revisaron todas las URLs del sitemap público el 24 de septiembre de 2026, incluyendo `/plantillas` y las cinco páginas en inglés. La versión española actual contiene el correo `equipoventas@bmwebsolutionscr.com` y WhatsApp `+506 6023 3159`. Se usaron estos datos en ambos idiomas para sustituir el contacto antiguo que aún aparece en inglés.
 
-Los planes siguen accesibles en `/planes` aunque el menú actual del sitio original los oculta. Se conservaron los precios publicados; conviene confirmar que continúan vigentes antes de sustituir el sitio comercial.
+La ruta `/planes` sigue accesible por compatibilidad, pero se presenta como «Soluciones» y no publica montos.
 
 Se corrigieron ortografía y descripciones cruzadas de proyectos. No se añadieron promesas sobre rankings, métricas de conversión ni resultados comerciales no verificados. Los retratos no disponibles del equipo se sustituyen por nombres y roles reales, sin inventar fotografías.
 

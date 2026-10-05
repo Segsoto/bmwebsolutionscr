@@ -5,10 +5,10 @@ Sitio estático bilingüe. El contenido final está en `dist/`, listo para aloja
 ## Alcance
 
 - Inicio, servicios, proyectos, planes, contacto y plantillas, en español e inglés.
-- Los 9 proyectos actuales y las 5 plantillas del sitio original.
+- Los 10 proyectos actuales y las 5 plantillas del sitio original. Fuck Face aparece primero como el proyecto más reciente.
 - Soluciones para sitios de presentación, sitios de crecimiento, tiendas en línea y software a medida, sin precios publicados.
 - Equipo actual: Brandon Soto, Manfred Zuñiga y Brandon Garro.
-- Logotipo, dos videos, fotografía y capturas reales de las páginas de inicio de AlmaBela, Abogados de la Guácima, Charlie Mensajería y CR Granimar. Los otros proyectos permanecen enlazados con una vista previa pendiente hasta contar con capturas verificables.
+- Logotipo, dos videos, fotografía y capturas reales de AlmaBela, Abogados de la Guácima, Charlie Mensajería, CR Granimar, La Camisa del 10, AroArte, AP Signature Travel y Fuck Face. El Sistema de Barbería muestra su pantalla pública de acceso. Barber Magic CR mantiene su vista previa pendiente porque su dominio no resolvió al verificarlo.
 - Asistente flotante con opciones de servicio y texto libre; prepara un mensaje contextual para WhatsApp. No envía mensajes por sí solo ni simula una conversación con IA.
 - Formulario accesible que prepara un mensaje para WhatsApp. El visitante revisa y envía el mensaje desde WhatsApp; no se afirma haber enviado automáticamente una consulta ni se guardan datos en un servidor.
 

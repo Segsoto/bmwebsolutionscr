@@ -2,6 +2,12 @@
 
 Sitio estático bilingüe. El contenido final está en `dist/`, listo para alojarse en cualquier servidor de archivos estáticos. Ejecutar `node generate.cjs` actualiza las 12 páginas a partir de los textos y componentes compartidos. Ejecutar `node serve.cjs` abre la vista previa en http://127.0.0.1:4173.
 
+## Publicación en Vercel
+
+El repositorio de GitHub es `Segsoto/bmwebsolutionscr`. Vercel genera las páginas con `node generate.cjs`, valida sus enlaces con `node check.cjs` y publica `dist/`, según `vercel.json`. No requiere dependencias ni variables de entorno. La rama de producción es `main`.
+
+Los cambios de contenido se realizan en `generate.cjs`; los estilos y la interacción compartida están en `dist/styles.css` y `dist/app.js`. Las capturas y los demás recursos están en `dist/assets/`. Antes de subir cambios, ejecutar `node generate.cjs` y `node check.cjs`.
+
 ## Alcance
 
 - Inicio, servicios, proyectos, planes, contacto y plantillas, en español e inglés.

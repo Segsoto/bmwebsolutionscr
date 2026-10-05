@@ -17,7 +17,7 @@ form?.addEventListener('submit', event => {
  event.preventDefault();
  if(!form.reportValidity()) return;
  const data = new FormData(form);
- const message = `${isEnglish ? 'Hello, I would like to discuss my project.' : 'Hola, me gustaría conversar sobre mi proyecto.'}\n\n${isEnglish ? 'Name' : 'Nombre'}: ${data.get('name')}\nEmail: ${data.get('email')}\n${isEnglish ? 'Service' : 'Servicio'}: ${data.get('service')}\n\n${data.get('message')}`;
+ const message = `${isEnglish ? 'Hello, I would like help with my business technology.' : 'Hola, me gustaría recibir ayuda con la tecnología de mi negocio.'}\n\n${isEnglish ? 'Name' : 'Nombre'}: ${data.get('name')}\nEmail: ${data.get('email')}\n${isEnglish ? 'Service' : 'Servicio'}: ${data.get('service')}\n\n${data.get('message')}`;
  const target = 'https://wa.me/50660233159?text=' + encodeURIComponent(message);
  const status = document.querySelector('#form-status');
  status.replaceChildren();
@@ -48,8 +48,8 @@ document.addEventListener('keydown', event => {
 const updateChatLink = () => {
   if (!send) return;
   const topics = isEnglish
-    ? {website:'a website',store:'an online store',software:'custom software',guidance:'guidance for my digital project'}
-    : {website:'una página web',store:'una tienda en línea',software:'software a medida',guidance:'orientación para mi proyecto digital'};
+    ? {support:'technical support for my business',monthly:'monthly IT support for my business',website:'a website',store:'an online store',software:'custom software',guidance:'guidance for my digital project'}
+    : {support:'soporte técnico para mi negocio',monthly:'acompañamiento mensual de TI para mi negocio',website:'una página web',store:'una tienda en línea',software:'software a medida',guidance:'orientación para mi proyecto digital'};
   let message = isEnglish ? 'Hello, I would like to discuss ' : 'Hola, quiero conversar sobre ';
   message += topics[topic] || (isEnglish ? 'a project for my business' : 'un proyecto para mi negocio');
   const description = details.value.trim();

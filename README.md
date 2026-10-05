@@ -29,3 +29,7 @@ Se corrigieron ortografía y descripciones cruzadas de proyectos. No se añadier
 - Tipografía: Manrope y DM Sans mediante Google Fonts, con alternativas locales.
 
 La copia de revisión es independiente de `www.bmwebsolutionscr.com`. No se cambió el dominio, DNS ni el sitio existente.
+
+## Oferta de TI para negocios
+
+Se incorporó la propuesta de equipo de TI externo en español e inglés: soporte puntual, acompañamiento mensual y proyectos tecnológicos. La portada presenta la oferta junto con los servicios web existentes; servicios y soluciones explican el alcance y el proceso. El formulario y el asistente de WhatsApp incluyen las consultas de TI. Los horarios, visitas y tiempos de respuesta se acuerdan por servicio; no se publican precios ni soporte ilimitado.

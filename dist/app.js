@@ -1,16 +1,23 @@
 const isEnglish = document.documentElement.lang === 'en';
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.navlinks');
+const mobileMenu = matchMedia('(max-width: 760px)');
 const setMenuOpen = open => {
  if (!menu || !nav) return;
+ open = open && mobileMenu.matches;
+ if (!open && mobileMenu.matches && nav.contains(document.activeElement)) menu.focus({ preventScroll: true });
  menu.setAttribute('aria-expanded', String(open));
  nav.classList.toggle('open', open);
- menu.childNodes[0].textContent = open ? (isEnglish ? 'Close' : 'Cerrar') : (isEnglish ? 'Menu' : 'Menú');
- menu.querySelector('span').textContent = open ? '×' : '☰';
+ nav.inert = mobileMenu.matches && !open;
+ menu.querySelector('.menu-label').textContent = open ? (isEnglish ? 'Close' : 'Cerrar') : (isEnglish ? 'Menu' : 'Menú');
 };
 menu?.addEventListener('click', () => setMenuOpen(menu.getAttribute('aria-expanded') !== 'true'));
 nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
-matchMedia('(min-width: 761px)').addEventListener('change', event => { if (event.matches) setMenuOpen(false); });
+mobileMenu.addEventListener('change', () => setMenuOpen(false));
+setMenuOpen(false);
+document.addEventListener('pointerdown', event => {
+ if (nav?.classList.contains('open') && !nav.contains(event.target) && !menu.contains(event.target)) setMenuOpen(false);
+});
 document.addEventListener('keydown', e => { if(e.key === 'Escape' && nav?.classList.contains('open')) { menu.click(); menu.focus(); } });
 
 // Manual tabs: no timed carousel, with complete keyboard navigation.

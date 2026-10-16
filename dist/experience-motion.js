@@ -3,6 +3,7 @@
  const english = document.documentElement.lang === 'en';
  const text = (es, en) => english ? en : es;
  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+ const motionPaused = () => motion.matches || document.documentElement.dataset.motion === 'paused';
  const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
  const sleepMotion = () => document.documentElement.classList.toggle('motion-sleep', document.hidden);
  document.addEventListener('visibilitychange', sleepMotion);
@@ -22,7 +23,7 @@
   });
   let hovering = false, touching = false, visible = false;
   const update = () => {
-   slider.classList.toggle('is-paused', motion.matches || hovering || touching || !visible || document.hidden);
+   slider.classList.toggle('is-paused', motionPaused() || hovering || touching || !visible || document.hidden);
   };
   viewport.addEventListener('mouseenter', () => { hovering = true; update(); });
   viewport.addEventListener('mouseleave', () => { hovering = false; update(); });
@@ -44,6 +45,7 @@
   });
   document.addEventListener('visibilitychange', update);
   motion.addEventListener('change', update);
+  document.addEventListener('bm:motion-change', update);
   if ('IntersectionObserver' in window) new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }).observe(slider);
   else visible = true;
   slider.classList.add('is-enhanced');
@@ -149,7 +151,7 @@
   let gazeFrame = 0, pointer = { x: 0, y: 0 };
   const resetGaze = () => { robot.style.setProperty('--gaze-x', '0px'); robot.style.setProperty('--gaze-y', '0px'); };
   window.addEventListener('pointermove', event => {
-   if (!finePointer.matches || motion.matches || !panel.hidden || event.pointerType === 'touch') return;
+   if (!finePointer.matches || motionPaused() || !panel.hidden || event.pointerType === 'touch') return;
    pointer = { x: event.clientX, y: event.clientY };
    if (gazeFrame) return;
    gazeFrame = requestAnimationFrame(() => {
@@ -163,6 +165,7 @@
   }, { passive: true });
   document.documentElement.addEventListener('pointerleave', resetGaze);
   motion.addEventListener('change', resetGaze);
+  document.addEventListener('bm:motion-change', resetGaze);
   const compact = () => chat.classList.toggle('is-compact', scrollY > 120);
   window.addEventListener('scroll', compact, { passive: true });
   compact();

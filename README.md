@@ -1,6 +1,6 @@
 # BM Web Solutions — Rediseño
 
-Sitio estático bilingüe. El contenido final está en `dist/`, listo para alojarse en cualquier servidor de archivos estáticos. Ejecutar `node generate.cjs` actualiza las 12 páginas a partir de los textos y componentes compartidos. Ejecutar `node serve.cjs` abre la vista previa en http://127.0.0.1:4173.
+Sitio estático bilingüe. El contenido final está en `dist/`, listo para alojarse en cualquier servidor de archivos estáticos. Ejecutar `node generate.cjs` actualiza las páginas a partir de los textos y componentes compartidos. Ejecutar `node serve.cjs` abre la vista previa en http://127.0.0.1:4173.
 
 ## Publicación en Vercel
 
@@ -24,7 +24,7 @@ La franja de confianza de la portada muestra ocho negocios reales con enlaces a 
 
 ## Alcance
 
-- Inicio, servicios, proyectos, planes, contacto y plantillas, en español e inglés.
+- Inicio, servicios, proyectos, planes, contacto, plantillas, privacidad, condiciones y 404, en español e inglés.
 - Los 10 proyectos actuales y las 5 plantillas del sitio original. Fuck Face aparece primero como el proyecto más reciente.
 - Soluciones para sitios de presentación, sitios de crecimiento, tiendas en línea y software a medida, sin precios publicados.
 - Equipo actual: Brandon Soto, Manfred Zuñiga y Brandon Garro.
@@ -58,3 +58,15 @@ Se incorporó la propuesta de equipo de TI externo en español e inglés: soport
 ## Presentación y contacto
 
 La página usa descripciones concretas de desarrollo web, software y soporte de TI en ambos idiomas. El bot flotante conserva su personaje SVG, saludo, parpadeo y seguimiento del cursor. Ofrece seis opciones de consulta y prepara un mensaje para WhatsApp, con posibilidad de añadir contexto. No envía mensajes por sí solo. Los iconos de navegación son SVG. La portada muestra capturas reales, sin efectos de profundidad ni destellos. Las animaciones del bot se conservan y respetan movimiento reducido. Se conserva el carrusel de clientes, con pausa al interactuar y compatibilidad con movimiento reducido.
+
+## Iconos, información y movimiento
+
+El icono de WhatsApp se sirve sin modificar desde el paquete oficial de Meta (Digital Glyph White RGB, 2026). Su relación de aspecto se fija en 1:1. Fuente: https://www.meta.com/en-gb/brand/resources/whatsapp/whatsapp-brand/
+
+Los favicons de 16, 32, 180, 192 y 512 píxeles y el archivo ICO se derivan del monograma del logotipo existente. El manifiesto usa la identidad de BM.
+
+Privacidad y condiciones están enlazadas desde el pie en ambos idiomas. El formulario requiere consentimiento para atender la consulta e incluye ese consentimiento en el mensaje preparado. Sin JavaScript se ofrecen enlaces directos de contacto para evitar enviar campos por GET. Las páginas describen el funcionamiento actual; su publicación no certifica cumplimiento legal ni sustituye una revisión jurídica. Referencia de protección de datos: https://formatos.inamu.go.cr/SIDOC/DOCS/ley_8968.pdf
+
+El generador emite `dist/404.html` para la respuesta 404 automática de Vercel, además de una versión inglesa en `dist/en/404.html`. La vista previa también devuelve HTTP 404 en rutas inexistentes. Se generan sitemap y robots, y las páginas 404 llevan noindex.
+
+Los titulares se revelan por palabras con máscara, perspectiva y desenfoque. El acento de la portada aparece por caracteres. Las animaciones usan Web Animations API, se ejecutan una sola vez al entrar en pantalla y no necesitan bibliotecas. El texto conserva una versión accesible y funciona sin JavaScript. Se respeta movimiento reducido y el pie permite pausar animaciones. El bot conserva sus animaciones originales.

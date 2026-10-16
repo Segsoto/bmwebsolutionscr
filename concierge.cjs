@@ -1,5 +1,5 @@
 // Original vector character: individual eyes and hand remain independently animatable.
-module.exports = ({ t, wa, arrow }) => {
+module.exports = ({ t, url, wa, arrow }) => {
  const robot = `<svg class="bm-robot" viewBox="0 0 220 220" fill="none" aria-hidden="true">
 
 
@@ -15,7 +15,7 @@ module.exports = ({ t, wa, arrow }) => {
  <g class="robot-eye"><rect x="80" y="69" width="19" height="25" rx="9.5" fill="#f7faf3"/><g class="robot-look"><rect x="86" y="75" width="8" height="15" rx="4" fill="#448da7"/><circle cx="91" cy="78" r="2" fill="white"/></g></g>
  <g class="robot-eye"><rect x="117" y="69" width="19" height="25" rx="9.5" fill="#f7faf3"/><g class="robot-look"><rect x="123" y="75" width="8" height="15" rx="4" fill="#448da7"/><circle cx="128" cy="78" r="2" fill="white"/></g></g>
  <path d="M103 99q6 5 12 0" stroke="#e9f2ed" stroke-width="2" stroke-linecap="round"/><path d="M78 111h10m40 0h10" stroke="#ce8a72" stroke-width="2" stroke-linecap="round"/></g></g></svg>`;
- const whatsappIcon = '<svg class="whatsapp-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.7a8.3 8.3 0 0 1-12.4 7.2L3 20.5l1.5-5A8.3 8.3 0 1 1 20.5 11.7Z"/><path d="M8.2 7.6c-.7.2-1 1.4-.6 2.5.7 2 2.2 3.5 4.3 4.4 1.1.4 2.4.4 2.9-.4l.6-1-2.5-1.2-.8.9c-1.3-.6-2.3-1.6-2.8-2.8l.8-.8-1.1-2.2-.8.6Z" stroke-linejoin="round"/></svg>';
+ const whatsappIcon = '<img class="whatsapp-mark" src="/assets/whatsapp-white.svg" width="24" height="24" alt="" aria-hidden="true">';
  return function chat() {
   const choices = [
    ['website',t('Quiero una página web','I need a website')],
@@ -28,13 +28,14 @@ module.exports = ({ t, wa, arrow }) => {
   const initialMessage = wa(t('Hola, me gustaría conversar con ustedes sobre mi negocio.','Hi, I’d like to talk with your team about my business.'));
   const whatsappButton = (className, label) => `<a class="btn guide-whatsapp ${className}" href="${initialMessage}" target="_blank" rel="noopener noreferrer">${whatsappIcon}<span>${label}</span>${arrow}</a>`;
   return `<div class="sales-chat robot-concierge"><button class="chat-launch robot-launch" type="button" aria-label="${t('Hablemos con el equipo de BM','Talk with the BM team')}" aria-controls="sales-chat-panel" aria-expanded="false"><span class="robot-invitation"><span>${t('¿Lo conversamos?','Shall we talk?')}</span><strong>${t('Estamos para ayudarte.','We’re here to help.')}</strong></span><span class="robot-art">${robot}</span><span class="robot-action">${t('Hablemos','Let’s talk')}<span aria-hidden="true">${arrow}</span></span></button>
-  <section class="chat-panel robot-panel" id="sales-chat-panel" role="dialog" aria-labelledby="guide-title" hidden>
-   <div class="chat-head"><div class="guide-brand"><span class="brand-crop"><img src="/assets/logo.png" alt="" width="500" height="357"></span><div><strong>BM Web Solutions</strong><small>${t('Un equipo de Costa Rica','A team from Costa Rica')}</small></div></div><button type="button" class="chat-close" aria-label="${t('Cerrar asistente','Close assistant')}">×</button></div>
+  <noscript><style>.robot-launch{display:none!important}</style><a class="btn bot-noscript" href="${initialMessage}">${whatsappIcon}WhatsApp</a></noscript><section class="chat-panel robot-panel" id="sales-chat-panel" role="dialog" aria-labelledby="guide-title" hidden>
+   <div class="chat-head"><div class="guide-brand"><span class="brand-crop"><img src="/assets/logo.png" alt="" width="500" height="357"></span><div><strong>BM Web Solutions</strong><small>${t('Un equipo de Costa Rica','A team from Costa Rica')}</small></div></div><button type="button" class="chat-close" aria-label="${t('Cerrar asistente','Close assistant')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
    <div class="chat-body"><div class="guide-welcome"><h2 id="guide-title">${t('¿En qué te damos<br>una mano?','How can we<br>help you?')}</h2><p class="chat-bubble">${t('Contanos un poco de tu negocio y lo que tenés en mente. Lo conversamos por WhatsApp, con calma y sin complicaciones.','Tell us a little about your business and what you have in mind. Let’s talk it through on WhatsApp.')}</p></div>
     ${whatsappButton('guide-direct',t('Escribinos por WhatsApp','Message us on WhatsApp'))}
     <div class="guide-team"><span class="guide-team-mark" aria-hidden="true">BM<span>${arrow}</span></span><p>${t('Del otro lado estamos nosotros.','You’ll be talking with our team.')}<span>Brandon Soto · Manfred Zuñiga · Brandon Garro</span></p></div><span class="chat-label" id="guide-question">${t('O elegí por dónde empezamos:','Or choose where we start:')}</span><div class="chat-options" role="group" aria-labelledby="guide-question">${choices.map(([id,label])=>`<button type="button" data-topic="${id}" aria-pressed="false"><span>${label}</span><b aria-hidden="true">→</b></button>`).join('')}</div>
     <div class="guide-result" hidden><button type="button" class="guide-back">${t('← Volver a las opciones','← Back to the options')}</button><div class="guide-answer" role="status" aria-live="polite" aria-atomic="true"><h3 data-guide-title></h3><p data-guide-description></p><ul data-guide-includes></ul></div><details class="guide-more"><summary>${t('¿Querés contarnos algo más?','Anything else you’d like to add?')}</summary><label for="chat-details">${t('Podés dejarlo escrito acá','You can write it here')}</label><textarea id="chat-details" maxlength="500" rows="2" placeholder="${t('Por ejemplo, a qué se dedica tu negocio…','For example, what your business does…')}"></textarea></details>${whatsappButton('chat-send',t('Conversemos por WhatsApp','Let’s talk on WhatsApp'))}<p class="chat-note">${t('El mensaje queda listo. Vos decidís cuándo enviarlo.','Your message will be ready. You decide when to send it.')}</p></div>
 
+    <p class="guide-privacy">${t('Al abrir WhatsApp, el texto preparado se comparte con ese servicio. Consultá nuestra ', 'Opening WhatsApp shares the prepared text with that service. Read our ')}<a href="${url('privacy')}">${t('Política de privacidad','Privacy policy')}</a>.</p>
    </div>
   </section></div>`;
  };

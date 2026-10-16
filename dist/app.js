@@ -75,7 +75,7 @@ form?.addEventListener('submit', event => {
  if (data.get('email').trim()) lines.push(`Email: ${data.get('email').trim()}`);
  if (data.get('date')) lines.push(`${isEnglish ? 'Preferred date' : 'Fecha preferida'}: ${data.get('date')}`);
  if (timeLabels[data.get('time')]) lines.push(`${isEnglish ? 'Preferred time' : 'Horario preferido'}: ${timeLabels[data.get('time')]} (Costa Rica, UTC−6)`);
- lines.push('', data.get('message').trim(), '', isEnglish ? 'Please confirm the availability and format of the session.' : '¿Podemos confirmar la disponibilidad y modalidad de la sesión?');
+ lines.push('', data.get('message').trim(), '', isEnglish ? 'I have read the privacy policy and consent to processing my data for this inquiry.' : 'Leí la política de privacidad y autorizo el uso de mis datos para atender esta consulta.', '', isEnglish ? 'Please confirm the availability and format of the session.' : '¿Podemos confirmar la disponibilidad y modalidad de la sesión?');
  const message = lines.join('\n');
  const target = 'https://wa.me/50660233159?text=' + encodeURIComponent(message);
  const status = document.querySelector('#form-status');

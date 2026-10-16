@@ -44,16 +44,7 @@ demoTabs.forEach((tab, index) => {
   demoTabs[next].focus();
  });
 });
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
-document.querySelectorAll('video').forEach(video => {
- const button = document.querySelector(`[data-video="${video.id}"]`);
- const update = () => { if(!button)return; button.textContent = video.paused ? '▶' : 'Ⅱ'; button.setAttribute('aria-label', video.paused ? (isEnglish ? 'Play background video' : 'Reproducir video de fondo') : (isEnglish ? 'Pause background video' : 'Pausar video de fondo')); button.setAttribute('aria-pressed', String(!video.paused)); };
- video.addEventListener('play',update); video.addEventListener('pause',update);
- if(!reducedMotion.matches) video.play().catch(update);
- button?.addEventListener('click', () => video.paused ? video.play().catch(update) : video.pause());
- update();
-});
 const form = document.querySelector('#contact-form');
 const preferredDate = form?.querySelector('[name="date"]');
 const updateDateMinimum = () => {

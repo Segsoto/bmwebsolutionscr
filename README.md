@@ -6,7 +6,7 @@ Sitio estático bilingüe. El contenido final está en `dist/`, listo para aloja
 
 El repositorio de GitHub es `Segsoto/bmwebsolutionscr`. Vercel genera las páginas con `node generate.cjs`, valida sus enlaces con `node check.cjs` y publica `dist/`, según `vercel.json`. No requiere dependencias ni variables de entorno. La rama de producción es `main`.
 
-La cuenta de Vercel es `segsoto`, con el equipo `brandon-s-projects-cc03ed1c` (Brandon 's projects). La web de producción está en https://bmwebsolutionscr-eta.vercel.app y el proyecto está conectado a GitHub para desplegar los cambios de `main` automáticamente. Antes de operar desde la terminal, comprobar que `vercel whoami` muestre `segsoto` y seleccionar ese equipo.
+La cuenta de Vercel es `segsoto`, con el equipo `brandon-s-projects-cc03ed1c` (Brandon 's projects). La web de producción está en https://www.bmwebsolutionscr.com y el proyecto está conectado a GitHub para desplegar los cambios de `main` automáticamente. Antes de operar desde la terminal, comprobar que `vercel whoami` muestre `segsoto` y seleccionar ese equipo.
 
 El contenido de los servicios, soluciones, proyectos y plantillas se define en `generate.cjs`. La portada, navegación, invitación a reservar, tarjetas de proyectos y formulario se definen en `experience.cjs`. Los estilos y la interacción compartida están en `dist/styles.css` y `dist/app.js`. Las capturas y los demás recursos están en `dist/assets/`. Antes de subir cambios, ejecutar `node generate.cjs` y `node check.cjs`.
 
@@ -48,7 +48,7 @@ Se corrigieron ortografía y descripciones cruzadas de proyectos. No se añadier
 - Fotografía de servicios: Unsplash photo-1507238691740-187a5b1d37b8, utilizada en el sitio original.
 - Tipografía: Manrope y DM Sans mediante Google Fonts, con alternativas locales.
 
-La copia de revisión es independiente de `www.bmwebsolutionscr.com`. No se cambió el dominio, DNS ni el sitio existente.
+La rama `main` publica el sitio en `www.bmwebsolutionscr.com` mediante la conexión existente con Vercel.
 
 ## Oferta de TI para negocios
 

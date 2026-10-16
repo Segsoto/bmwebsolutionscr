@@ -29,7 +29,7 @@ La franja de confianza de la portada muestra ocho negocios reales con enlaces a 
 - Soluciones para sitios de presentación, sitios de crecimiento, tiendas en línea y software a medida, sin precios publicados.
 - Equipo actual: Brandon Soto, Manfred Zuñiga y Brandon Garro.
 - Logotipo, fotografía y capturas reales de AlmaBela, Abogados de la Guácima, Charlie Mensajería, CR Granimar, La Camisa del 10, AroArte, AP Signature Travel y Fuck Face. El Sistema de Barbería muestra su pantalla pública de acceso. Barber Magic CR conserva su aviso de vista previa pendiente. Los videos originales permanecen como recursos, sin reproducirse en la nueva portada.
-- Enlace flotante de contacto directo con el equipo por WhatsApp.
+- Bot flotante con seis opciones de consulta, campo para añadir contexto y enlaces a WhatsApp.
 - Formulario accesible de solicitud de sesión, con servicio preseleccionado, preferencia de fecha y horario, validación y mensaje preparado para WhatsApp. El visitante revisa y envía el mensaje desde WhatsApp; la sesión se confirma con el equipo.
 
 ## Fuentes y decisiones
@@ -57,4 +57,4 @@ Se incorporó la propuesta de equipo de TI externo en español e inglés: soport
 
 ## Presentación y contacto
 
-La página usa descripciones concretas de desarrollo web, software y soporte de TI en ambos idiomas. El contacto flotante abre WhatsApp directamente, sin personaje ni respuestas automáticas. Los iconos de navegación son SVG. La portada muestra capturas reales, sin efectos de profundidad, destellos ni animaciones decorativas. Se conserva el carrusel de clientes, con pausa al interactuar y compatibilidad con movimiento reducido.
+La página usa descripciones concretas de desarrollo web, software y soporte de TI en ambos idiomas. El bot flotante conserva su personaje SVG, saludo, parpadeo y seguimiento del cursor. Ofrece seis opciones de consulta y prepara un mensaje para WhatsApp, con posibilidad de añadir contexto. No envía mensajes por sí solo. Los iconos de navegación son SVG. La portada muestra capturas reales, sin efectos de profundidad ni destellos. Las animaciones del bot se conservan y respetan movimiento reducido. Se conserva el carrusel de clientes, con pausa al interactuar y compatibilidad con movimiento reducido.

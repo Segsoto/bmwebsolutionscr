@@ -9,7 +9,7 @@ const setMenuOpen = open => {
  menu.setAttribute('aria-expanded', String(open));
  nav.classList.toggle('open', open);
  nav.inert = mobileMenu.matches && !open;
- menu.querySelector('.menu-label').textContent = open ? (isEnglish ? 'Close' : 'Cerrar') : (isEnglish ? 'Menu' : 'Menú');
+ menu.setAttribute('aria-label', open ? (isEnglish ? 'Close menu' : 'Cerrar menú') : (isEnglish ? 'Open menu' : 'Abrir menú'));
 };
 menu?.addEventListener('click', () => setMenuOpen(menu.getAttribute('aria-expanded') !== 'true'));
 nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));

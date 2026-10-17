@@ -19,7 +19,7 @@
   if(animated.has(heading)) {
    heading.getAnimations({subtree:true}).forEach(animation=>animation.cancel());
    heading.querySelectorAll('.motion-piece').forEach((word,index)=>play(word,[
-    {opacity:0,transform:`translateY(${scrollDirection*85}%)`,filter:'blur(3px)'},
+    {opacity:0,transform:`translateY(${scrollDirection*.24}em)`,filter:'blur(2px)'},
     {opacity:1,transform:'translateY(0)',filter:'blur(0)'}
    ],{duration:560,delay:Math.min(index*35,210),easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'}));
    return;
@@ -59,14 +59,13 @@
   heading.classList.add('text-composed');
   const isIntro=heading.matches('.hero-intro');
   words.forEach((word,index) => play(word,[
-   {opacity:0,transform:`translate3d(0,${isIntro?'85':'115'}%,0) rotateX(72deg) skewY(5deg)`,filter:'blur(7px)',clipPath:'inset(0 0 100% 0)'},
-   {opacity:.9,offset:.65,transform:'translate3d(0,-4%,0) rotateX(-5deg) skewY(-.5deg)',filter:'blur(.6px)',clipPath:'inset(0 0 0 0)'},
-   {opacity:1,transform:'translate3d(0,0,0) rotateX(0deg) skewY(0deg)',filter:'blur(0px)',clipPath:'inset(0 0 0 0)'}
-  ],{duration:isIntro?540:920,delay:(isIntro?200:60)+index*(isIntro?14:75),easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'}));
+   {opacity:0,transform:'translateY(.24em)',filter:'blur(2px)'},
+   {opacity:1,transform:'translateY(0)',filter:'blur(0)'}
+  ],{duration:isIntro?420:640,delay:(isIntro?80:40)+index*(isIntro?8:45),easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'}));
   letters.forEach((letter,index)=>play(letter,[
-   {opacity:0,clipPath:'inset(0 100% 0 0)',transform:'translateY(.16em)'},
-   {opacity:1,clipPath:'inset(0 0 0 0)',transform:'translateY(0)'}
-  ],{duration:130,delay:570+index*32,easing:'steps(2,end)',fill:'backwards'}));
+   {opacity:0,transform:'translateY(.08em)'},
+   {opacity:1,transform:'translateY(0)'}
+  ],{duration:240,delay:180+index*18,easing:'ease-out',fill:'backwards'}));
  }
  try {
   if ('IntersectionObserver' in window) {

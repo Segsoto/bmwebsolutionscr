@@ -1,7 +1,8 @@
 // Original vector character: individual eyes and hand remain independently animatable.
 module.exports = ({ t, url, wa, arrow }) => {
+ const eyeLight = x => `<g class="robot-light-origin" transform="translate(${x} 82.5)"><g class="robot-eye-flare"><path d="M0-1.5Q35-10 86-15L94 0 86 15Q35 10 0 1.5Z" fill="url(#bm-eye-flare)"/><path d="M-5 0H5M0-3.5V3.5" stroke="#fff0cf" stroke-width=".8" stroke-linecap="round" opacity=".7"/></g></g>`;
  const robot = `<svg class="bm-robot" viewBox="0 0 220 220" fill="none" aria-hidden="true">
-
+ <defs><linearGradient id="bm-eye-flare" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="94" y2="0"><stop stop-color="#ffe0a9" stop-opacity=".65"/><stop offset=".35" stop-color="#ffae56" stop-opacity=".27"/><stop offset=".7" stop-color="#ff983b" stop-opacity=".1"/><stop offset="1" stop-color="#ff983b" stop-opacity="0"/></linearGradient></defs>
 
  <ellipse cx="110" cy="191" rx="34" ry="4" fill="#234b67" opacity=".1"/>
  <g class="robot-float">
@@ -12,8 +13,8 @@ module.exports = ({ t, url, wa, arrow }) => {
  <g class="robot-head"><path d="M108 42V29" stroke="#78addb" stroke-width="4"/><circle class="robot-antenna" cx="108" cy="24" r="6" fill="#e5b767" stroke="white" stroke-width="2"/><rect x="47" y="68" width="18" height="28" rx="8" fill="#9bbdc8"/><rect x="152" y="68" width="18" height="28" rx="8" fill="#9bbdc8"/><path d="M51 75v14m114-14v14" stroke="#2da6ec" stroke-width="3" stroke-linecap="round"/>
  <rect x="57" y="42" width="102" height="80" rx="29" fill="#f8f5ed" stroke="#7db5e1" stroke-width="1.5"/><path d="M76 50c11-4 24-5 39-4" stroke="white" stroke-width="3" stroke-linecap="round"/>
  <rect x="66" y="55" width="84" height="53" rx="22" fill="#173c55"/><path d="M77 61c13-4 27-4 40-2" stroke="#48688b" stroke-width="2" stroke-linecap="round"/>
- <g class="robot-eye"><rect x="80" y="69" width="19" height="25" rx="9.5" fill="#f7faf3"/><g class="robot-look"><rect x="86" y="75" width="8" height="15" rx="4" fill="#448da7"/><circle cx="91" cy="78" r="2" fill="white"/></g></g>
- <g class="robot-eye"><rect x="117" y="69" width="19" height="25" rx="9.5" fill="#f7faf3"/><g class="robot-look"><rect x="123" y="75" width="8" height="15" rx="4" fill="#448da7"/><circle cx="128" cy="78" r="2" fill="white"/></g></g>
+ <g class="robot-eye" style="--eye-center:89.5px"><rect x="80" y="69" width="19" height="25" rx="9.5" fill="#f7faf3"/><g class="robot-look"><rect x="86" y="75" width="8" height="15" rx="4" fill="#448da7"/><circle cx="91" cy="78" r="2" fill="white"/>${eyeLight(90)}</g></g>
+ <g class="robot-eye" style="--eye-center:126.5px"><rect x="117" y="69" width="19" height="25" rx="9.5" fill="#f7faf3"/><g class="robot-look"><rect x="123" y="75" width="8" height="15" rx="4" fill="#448da7"/><circle cx="128" cy="78" r="2" fill="white"/>${eyeLight(127)}</g></g>
  <path d="M103 99q6 5 12 0" stroke="#e9f2ed" stroke-width="2" stroke-linecap="round"/><path d="M78 111h10m40 0h10" stroke="#ce8a72" stroke-width="2" stroke-linecap="round"/></g></g></svg>`;
  const whatsappIcon = '<img class="whatsapp-mark" src="/assets/whatsapp-white.svg" width="24" height="24" alt="" aria-hidden="true">';
  return function chat() {

@@ -1,0 +1,72 @@
+/* Shared theme roles. The original light palette remains in styles.css. */
+.theme-toggle{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:10px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);transition:background-color .2s,border-color .2s}
+.theme-toggle:hover{background:var(--soft);border-color:var(--blue)}
+.theme-toggle svg{width:20px;height:20px;grid-area:1/1}
+.theme-sun{display:none}
+:root[data-theme=dark]{color-scheme:dark;--ink:#e5edf5;--muted:#a5b5c6;--paper:#0d1520;--soft:#141f2d;--line:#2a3b4e;--blue:#8cb4ff;--navy:#0a111b;--cyan:#afcafc;--lime:#d7f2b0;--action:#215cdb;--surface:#192637}
+:root[data-theme=dark] .theme-moon{display:none}
+:root[data-theme=dark] .theme-sun{display:block}
+:root[data-theme=dark] ::selection{background:#34557a;color:#fff}
+:root[data-theme=dark] .header{background:#0d1520f2}
+:root[data-theme=dark] .btn{background:var(--action);color:#fff}
+:root[data-theme=dark] .btn:hover{background:#194ebf}
+:root[data-theme=dark] .btn.dark{background:#263e58;color:#f3f7fc}
+:root[data-theme=dark] .btn.dark:hover{background:#314f70}
+:root[data-theme=dark] .btn.white{background:#e5edf5;color:#132b3b}
+:root[data-theme=dark] .btn.white:hover{background:var(--lime)}
+:root[data-theme=dark] .btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] .skip{background:var(--surface)}
+:root[data-theme=dark] .clients,:root[data-theme=dark] .faq-section{background:var(--paper)}
+:root[data-theme=dark] .client-slide a{color:var(--muted)}
+:root[data-theme=dark] .client-slide a:hover{color:var(--ink)}
+:root[data-theme=dark] .showcase{background:#142c50;border:1px solid #34557a;box-shadow:0 20px 50px #0002}
+:root[data-theme=dark] .showcase-tabs{background:#0c1e39}
+:root[data-theme=dark] .showcase-tabs button[aria-selected=true]{background:#dce9ff;color:#153f7a}
+:root[data-theme=dark] .demo-browser{background:var(--surface);border-color:#34465b}
+:root[data-theme=dark] .browser-bar,:root[data-theme=dark] .project-browser,:root[data-theme=dark] .demo-browser>.preview-controls{background:#1b2a3d;color:var(--muted)}
+:root[data-theme=dark] .project-browser>span{color:var(--muted)}
+:root[data-theme=dark] .project-browser>i{background:#63758c}
+:root[data-theme=dark] .software-demo,:root[data-theme=dark] .it-demo{background:var(--surface)}
+:root[data-theme=dark] .workflow>span{background:#22344b}
+:root[data-theme=dark] .demo-sticker{color:#172b3a}
+:root[data-theme=dark] .project-visual,:root[data-theme=dark] .project-card:nth-child(2n) .project-visual{background:#1c2b3b}
+:root[data-theme=dark] .project-film{background:#14202e}
+:root[data-theme=dark] .preview-controls button{color:var(--muted)}
+:root[data-theme=dark] .preview-controls button:hover{background:#263d56;color:var(--ink)}
+:root[data-theme=dark] .preview-controls button[aria-pressed=true]{background:#243c5a;border-color:#466994;color:#bdd5ff}
+:root[data-theme=dark] .initial,:root[data-theme=dark] .testimonial{background:var(--surface)}
+:root[data-theme=dark] .cta{background:#183b78}
+:root[data-theme=dark] .mobile-booking{background:#101c2af7}
+:root[data-theme=dark] .service-more:hover{background:#304731}
+:root[data-theme=dark] .elite{background:#1c3032}
+:root[data-theme=dark] .tech span{background:var(--surface);color:var(--ink)}
+:root[data-theme=dark] .robot-invitation{background:var(--surface);border-color:#3a5065;box-shadow:0 5px 22px #0003}
+:root[data-theme=dark] .robot-invitation strong{color:#c4e5d5}
+:root[data-theme=dark] .robot-action{background:#263e58;border:1px solid #526f8c}
+:root[data-theme=dark] .robot-launch:hover .robot-action{background:#345475}
+:root[data-theme=dark] .robot-panel,:root[data-theme=dark] .robot-panel .chat-head{background:#14202d;border-color:var(--line);color:var(--ink)}
+:root[data-theme=dark] .robot-panel .chat-head small,:root[data-theme=dark] .robot-panel .chat-bubble,:root[data-theme=dark] .robot-panel .chat-label,:root[data-theme=dark] .guide-answer p,:root[data-theme=dark] .guide-answer ul,:root[data-theme=dark] .guide-team p>span,:root[data-theme=dark] .guide-back,:root[data-theme=dark] .guide-privacy{color:var(--muted)}
+:root[data-theme=dark] .robot-panel .chat-close,:root[data-theme=dark] .guide-answer h3,:root[data-theme=dark] .guide-team p{color:var(--ink)}
+:root[data-theme=dark] .robot-panel .chat-close:hover{background:var(--surface)}
+:root[data-theme=dark] .robot-panel .chat-options,:root[data-theme=dark] .robot-panel .chat-options button,:root[data-theme=dark] .guide-answer ul,:root[data-theme=dark] .guide-privacy{border-color:var(--line)}
+:root[data-theme=dark] .robot-panel .chat-options button{color:#d1dfeb}
+:root[data-theme=dark] .robot-panel .chat-options button>b{color:#9db9d1}
+:root[data-theme=dark] .robot-panel .chat-options button:hover,:root[data-theme=dark] .robot-panel .chat-options button[aria-pressed=true],:root[data-theme=dark] .guide-back:hover,:root[data-theme=dark] .guide-privacy a{color:#a7e1c3}
+:root[data-theme=dark] .guide-team-mark{background:#254438;color:#c9e7d6}
+:root[data-theme=dark] .btn.guide-whatsapp{background:#176c4c;border-color:#27835f}
+:root[data-theme=dark] .btn.guide-whatsapp:hover{background:#115438}
+
+/* A warm, local reflection that fades softly beyond each eye. */
+.robot-eye{transform-box:view-box;transform-origin:var(--eye-center) 81.5px}
+.robot-eye-flare{display:none;pointer-events:none;transform-box:view-box;transform:rotate(var(--flare-angle,-135deg));transform-origin:0 0;filter:blur(2.2px)}
+:root[data-theme=dark] .robot-eye>rect{fill:#ffb76b}
+:root[data-theme=dark] .robot-look>rect{fill:#fff0cf}
+:root[data-theme=dark] .robot-look{filter:drop-shadow(0 0 2px #ffd196) drop-shadow(0 0 7px #ff8c32b3)}
+:root[data-theme=dark] .robot-eye-flare{display:block;opacity:.9}
+:root[data-theme=dark] .robot-art{filter:drop-shadow(0 5px 12px #0005)}
+@media(max-width:1150px){.nav{gap:16px}.navlinks{gap:16px}}
+@media(min-width:761px) and (max-width:1000px){.nav>.btn{display:none}.navlinks .mobile-only{display:block}.nav{gap:14px}.navlinks{gap:13px}}
+@media(max-width:760px){.nav{gap:10px}.theme-toggle{flex-basis:40px;width:40px;height:44px;border-radius:8px;padding:9px}.brand-title{font-size:.86rem}.brand-title small{font-size:.5rem}}
+
+@media(max-width:380px){.nav{gap:7px}.brand-title{font-size:.79rem}.brand-title small{font-size:.46rem}.brand-crop{width:32px}.brand{gap:4px}.theme-toggle{flex-basis:36px;width:36px}.lang{gap:4px}}
+@media(prefers-reduced-motion:reduce),(hover:none),(pointer:coarse){:root[data-theme=dark] .robot-eye-flare{display:none}}

@@ -69,7 +69,7 @@ Privacidad y condiciones están enlazadas desde el pie en ambos idiomas. La pol�
 
 El generador emite `dist/404.html` para la respuesta 404 automática de Vercel, además de una versión inglesa en `dist/en/404.html`. La vista previa también devuelve HTTP 404 en rutas inexistentes. Se generan sitemap y robots, y las páginas 404 llevan noindex.
 
-Los titulares se revelan por palabras con máscara, perspectiva y desenfoque. El acento de la portada aparece por caracteres. Las animaciones usan Web Animations API, se ejecutan una sola vez al entrar en pantalla y no necesitan bibliotecas. El texto conserva una versión accesible y funciona sin JavaScript. Se respeta movimiento reducido según la preferencia de movimiento del sistema. El bot conserva sus animaciones originales.
+Los titulares aparecen por palabras con opacidad, desplazamiento breve y desenfoque suave, sin máscaras que recorten las letras. El acento de la portada aparece por caracteres con una transición suave. Las animaciones usan Web Animations API, se reactivan al volver a entrar en pantalla y no necesitan bibliotecas. El texto conserva una versión accesible y funciona sin JavaScript. Se respeta movimiento reducido según la preferencia de movimiento del sistema. El bot conserva sus animaciones originales.
 
 ## Contacto directo y SEO
 
@@ -99,3 +99,11 @@ La portada y ocho proyectos usan grabaciones públicas de sus sitios: Fuck Face,
 Los archivos H.264/MP4 optimizados y las portadas JPG viven en `dist/assets/previews/`. `recordings.json` registra URL, tamaño, duración y fecha de captura; `project-media.cjs` genera la presentación. Se puede alternar entre escritorio y móvil y pausar cada video. Se descargan al entrar en pantalla y se detienen fuera de ella, al ocultar la pestaña o al cambiar la pestaña del showcase. Movimiento reducido y ahorro de datos muestran la portada, con reproducción voluntaria. Sin JavaScript se mantienen la portada y el enlace al proyecto.
 
 Barber Magic no resolvió DNS durante la captura. El sistema de barbería solo ofrece una página pública de inicio de sesión sin recorrido; ambos conservan su presentación anterior. La leyenda inferior «EJEMPLO VISUAL / SOFTWARE A MEDIDA» se retiró; la maqueta de software sigue identificada como ejemplo.
+
+## Modo oscuro y luz del robot
+
+El selector de la cabecera alterna entre claro y oscuro en todas las páginas, incluidos contacto, documentos legales y 404, en ambos idiomas. La primera visita sigue la apariencia del sistema; la elección explícita se guarda en `localStorage` (`bm-theme`) y se sincroniza entre pestañas. Si el almacenamiento está bloqueado, el selector sigue funcionando durante la visita. `dist/theme.js` aplica la preferencia antes de cargar los estilos para evitar un destello de tema claro.
+
+`dist/theme.css` define la paleta oscura y los estados del selector. Los ojos del robot emiten un brillo anaranjado cálido. Un destello local con degradado y desenfoque gira hacia el puntero y se extiende suavemente desde cada ojo. El seguimiento usa un frame por movimiento del puntero y respeta el parpadeo. Se reinicia al abrir el asistente, desplazar o redimensionar la página, salir el puntero, perder foco y ocultarse la página. En pantallas táctiles y con movimiento reducido se conserva el brillo fijo.
+
+Verificación: `node generate.cjs` y `node check.cjs`. Con la vista previa activa, `node review-dark-mode.cjs http://127.0.0.1:4173` revisa las 26 páginas, siete anchos, español e inglés, teclado, persistencia, preferencia del sistema, sincronización entre pestañas, seguimiento del cursor, movimiento reducido y almacenamiento bloqueado. Usa Playwright y Edge del entorno de desarrollo; no añade dependencias al sitio publicado.

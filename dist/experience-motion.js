@@ -104,6 +104,7 @@
    }
   };
   const setOpen = open => {
+   if (open) resetGaze();
    panel.hidden = !open;
    chat.classList.toggle('is-open', open);
    launch.setAttribute('aria-expanded', String(open));
@@ -143,23 +144,58 @@
   });
   updateMessage();
 
-  // Pointer tracking writes at most once per frame. Touch uses the greeting pose.
-  let gazeFrame = 0, pointer = { x: 0, y: 0 };
-  const resetGaze = () => { robot.style.setProperty('--gaze-x', '0px'); robot.style.setProperty('--gaze-y', '0px'); };
-  window.addEventListener('pointermove', event => {
-   if (!finePointer.matches || motionPaused() || !panel.hidden || event.pointerType === 'touch') return;
-   pointer = { x: event.clientX, y: event.clientY };
-   if (gazeFrame) return;
-   gazeFrame = requestAnimationFrame(() => {
-    const rect = robot.getBoundingClientRect();
-    const dx = pointer.x - (rect.left + rect.width * .49);
-    const dy = pointer.y - (rect.top + rect.height * .37);
-    robot.style.setProperty('--gaze-x', (Math.tanh(dx / 240) * 4.5).toFixed(2) + 'px');
-    robot.style.setProperty('--gaze-y', (Math.tanh(dy / 200) * 3).toFixed(2) + 'px');
-    gazeFrame = 0;
+  // Coalesce pointer movement into one frame; the reflection stays near the eyes.
+  let gazeFrame = 0, pointer = null;
+  const lights = [...robot.querySelectorAll('.robot-light-origin')];
+  const head = robot.querySelector('.robot-head');
+  const canTrack = () => finePointer.matches && !motionPaused() && panel.hidden && !document.hidden;
+  const resetGaze = () => {
+   cancelAnimationFrame(gazeFrame);
+   gazeFrame = 0;
+   pointer = null;
+   lights.forEach(origin => origin.firstElementChild.style.removeProperty('--flare-angle'));
+   robot.classList.remove('robot-tracking');
+   robot.style.setProperty('--gaze-x', '0px');
+   robot.style.setProperty('--gaze-y', '0px');
+  };
+  const drawGaze = () => {
+   gazeFrame = 0;
+   if (!canTrack() || !pointer) { resetGaze(); return; }
+   const rect = robot.getBoundingClientRect();
+   const dx = pointer.x - (rect.left + rect.width * .49);
+   const dy = pointer.y - (rect.top + rect.height * .37);
+   robot.style.setProperty('--gaze-x', (Math.tanh(dx / 240) * 4.5).toFixed(2) + 'px');
+   robot.style.setProperty('--gaze-y', (Math.tanh(dy / 200) * 3).toFixed(2) + 'px');
+   const dark = document.documentElement.dataset.theme === 'dark';
+   robot.classList.toggle('robot-tracking', dark);
+   if (!dark) return;
+   const headMatrix = head.getScreenCTM();
+   if (!headMatrix) return;
+   const inverse = headMatrix.inverse();
+   const target = new DOMPoint(pointer.x, pointer.y).matrixTransform(inverse);
+   // Head coordinates keep the direction stable through the separate blink scale.
+   const matrices = lights.map(origin => origin.getScreenCTM());
+   lights.forEach((origin, index) => {
+    const matrix = matrices[index];
+    if (!matrix) return;
+    const eye = new DOMPoint(matrix.e, matrix.f).matrixTransform(inverse);
+    origin.firstElementChild.style.setProperty('--flare-angle', (Math.atan2(target.y - eye.y, target.x - eye.x) * 180 / Math.PI).toFixed(2) + 'deg');
    });
+  };
+  window.addEventListener('pointermove', event => {
+   if (event.pointerType === 'touch') { resetGaze(); return; }
+   if (!canTrack()) return;
+   pointer = { x: event.clientX, y: event.clientY };
+   if (!gazeFrame) gazeFrame = requestAnimationFrame(drawGaze);
   }, { passive: true });
+  window.addEventListener('pointerdown', event => { if (event.pointerType === 'touch') resetGaze(); }, { passive: true });
+  window.addEventListener('scroll', resetGaze, { passive: true });
+  window.addEventListener('resize', resetGaze, { passive: true });
   document.documentElement.addEventListener('pointerleave', resetGaze);
+  window.addEventListener('blur', resetGaze);
+  finePointer.addEventListener('change', resetGaze);
+  document.addEventListener('visibilitychange', resetGaze);
+  document.addEventListener('bm:theme-change', resetGaze);
   motion.addEventListener('change', resetGaze);
   document.addEventListener('bm:motion-change', resetGaze);
   const compact = () => chat.classList.toggle('is-compact', scrollY > 120);

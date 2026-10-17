@@ -19,6 +19,7 @@ const assert=(value,message)=>{if(!value)throw Error(message);};
    await page.setViewportSize({width,height:715});
    await page.emulateMedia({colorScheme:theme,reducedMotion:'no-preference'});
    await page.goto(base+route);
+   if(await page.locator('html').getAttribute('data-theme')!==theme)await page.locator('.theme-toggle').click();
    await page.evaluate(()=>document.fonts.ready);
    await page.waitForFunction(()=>window.reviewTextAnimations.length>0);
    await page.evaluate(()=>window.reviewTextAnimations.forEach(animation=>{
@@ -46,6 +47,7 @@ const assert=(value,message)=>{if(!value)throw Error(message);};
   await page.setViewportSize({width:1440,height:1000});
   await page.emulateMedia({colorScheme:'dark'});
   await page.goto(base);
+  if(await page.locator('html').getAttribute('data-theme')!=='dark')await page.locator('.theme-toggle').click();
   assert(await page.locator('.robot-pointer-light').count()===0,'No beam to the cursor');
   await page.mouse.move(300,300);await page.waitForTimeout(180);
   const first=await page.locator('.robot-eye-flare').first().evaluate(e=>e.style.getPropertyValue('--flare-angle'));

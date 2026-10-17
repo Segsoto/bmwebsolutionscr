@@ -104,11 +104,12 @@ const assert = (condition, message) => { if (!condition) throw Error(message); }
   const system = await browser.newContext({ colorScheme: 'dark', isMobile: true, hasTouch: true, viewport: { width: 390, height: 844 } });
   const fresh = await system.newPage();
   await fresh.goto(base);
-  assert(await fresh.locator('html').getAttribute('data-theme') === 'dark', 'Fresh visitor follows OS');
+  assert(await fresh.locator('html').getAttribute('data-theme') === 'light', 'Fresh visitor starts light even on a dark OS');
+  await fresh.locator('.theme-toggle').click();
   await fresh.dispatchEvent('body', 'pointermove', { clientX: 100, clientY: 100, pointerType: 'touch' });
   assert(!await fresh.locator('.bm-robot').evaluate(e => e.classList.contains('robot-tracking')), 'Touch has static glow');
   await fresh.emulateMedia({ colorScheme: 'light' });
-  await fresh.waitForFunction(() => document.documentElement.dataset.theme === 'light');
+  assert(await fresh.locator('html').getAttribute('data-theme') === 'dark', 'Manual dark choice survives OS changes');
   await system.close();
   const restricted = await browser.newContext();
   await restricted.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('Blocked', 'SecurityError'); } }); });
@@ -119,6 +120,6 @@ const assert = (condition, message) => { if (!condition) throw Error(message); }
   await restricted.close();
   assert(!errors.length, 'Browser errors: ' + JSON.stringify(errors));
   assert(!failures.length, 'Resource failures: ' + JSON.stringify(failures));
-  console.log(JSON.stringify({ pages: routes.length, widths: 7, bilingual: true, persistent: true, systemPreference: true, crossTab: true, keyboard: true, pointerFlare: true, reducedMotion: true, touch: true, blockedStorage: true, browserErrors: errors.length, resourceFailures: failures.length }));
+  console.log(JSON.stringify({ pages: routes.length, widths: 7, bilingual: true, persistent: true, lightByDefault: true, crossTab: true, keyboard: true, pointerFlare: true, reducedMotion: true, touch: true, blockedStorage: true, browserErrors: errors.length, resourceFailures: failures.length }));
  } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exit(1); });

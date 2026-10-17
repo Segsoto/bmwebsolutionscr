@@ -2,7 +2,6 @@
  'use strict';
  const root = document.documentElement;
  const key = 'bm-theme';
- const system = matchMedia('(prefers-color-scheme: dark)');
  let preference = null;
  try { preference = localStorage.getItem(key); } catch {}
  if (!['light', 'dark'].includes(preference)) preference = null;
@@ -17,7 +16,7 @@
   });
   document.dispatchEvent(new Event('bm:theme-change'));
  };
- const sync = () => apply(preference || (system.matches ? 'dark' : 'light'));
+ const sync = () => apply(preference || 'light');
  sync();
  document.addEventListener('DOMContentLoaded', () => {
   sync();
@@ -27,7 +26,6 @@
    apply(preference);
   }));
  });
- system.addEventListener('change', () => { if (!preference) sync(); });
  window.addEventListener('storage', event => {
   if (event.key !== key && event.key !== null) return;
   preference = ['light', 'dark'].includes(event.newValue) ? event.newValue : null;

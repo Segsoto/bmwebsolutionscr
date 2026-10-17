@@ -1,0 +1,186 @@
+{
+  "https://fuck-face.com/": {
+    "slug": "fuck-face",
+    "url": "https://fuck-face.com/",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/fuck-face-desktop.mp4",
+      "poster": "/assets/previews/fuck-face-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 3085956,
+      "duration": 14.25,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/fuck-face-mobile.mp4",
+      "poster": "/assets/previews/fuck-face-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 2567534,
+      "duration": 14.333333333333334,
+      "optimized": true
+    }
+  },
+  "https://almabelacr.com/": {
+    "slug": "almabela",
+    "url": "https://almabelacr.com/",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/almabela-desktop.mp4",
+      "poster": "/assets/previews/almabela-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 806227,
+      "duration": 14.166666666666666,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/almabela-mobile.mp4",
+      "poster": "/assets/previews/almabela-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 1051253,
+      "duration": 14.166666666666666,
+      "optimized": true
+    }
+  },
+  "https://abogadosdelaguacima.com/": {
+    "slug": "abogados",
+    "url": "https://abogadosdelaguacima.com/",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/abogados-desktop.mp4",
+      "poster": "/assets/previews/abogados-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 1102011,
+      "duration": 14.333333333333334,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/abogados-mobile.mp4",
+      "poster": "/assets/previews/abogados-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 978072,
+      "duration": 14.333333333333334,
+      "optimized": true
+    }
+  },
+  "https://charliemensajeria.com/index.html": {
+    "slug": "charlie",
+    "url": "https://charliemensajeria.com/index.html",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/charlie-desktop.mp4",
+      "poster": "/assets/previews/charlie-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 1024150,
+      "duration": 14.291666666666666,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/charlie-mobile.mp4",
+      "poster": "/assets/previews/charlie-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 1056839,
+      "duration": 14.291666666666666,
+      "optimized": true
+    }
+  },
+  "https://www.granimarcr.com/": {
+    "slug": "granimar",
+    "url": "https://www.granimarcr.com/",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/granimar-desktop.mp4",
+      "poster": "/assets/previews/granimar-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 1317236,
+      "duration": 14.208333333333334,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/granimar-mobile.mp4",
+      "poster": "/assets/previews/granimar-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 1469525,
+      "duration": 14.208333333333334,
+      "optimized": true
+    }
+  },
+  "https://www.lacamisadel10.com/": {
+    "slug": "camisa-del-10",
+    "url": "https://www.lacamisadel10.com/",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/camisa-del-10-desktop.mp4",
+      "poster": "/assets/previews/camisa-del-10-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 2195002,
+      "duration": 14.416666666666666,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/camisa-del-10-mobile.mp4",
+      "poster": "/assets/previews/camisa-del-10-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 1950816,
+      "duration": 14.375,
+      "optimized": true
+    }
+  },
+  "https://aroarte.com/": {
+    "slug": "aroarte",
+    "url": "https://aroarte.com/",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/aroarte-desktop.mp4",
+      "poster": "/assets/previews/aroarte-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 431137,
+      "duration": 14.166666666666666,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/aroarte-mobile.mp4",
+      "poster": "/assets/previews/aroarte-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 473631,
+      "duration": 14.125,
+      "optimized": true
+    }
+  },
+  "https://www.apsignaturetravel.com/": {
+    "slug": "ap-signature",
+    "url": "https://www.apsignaturetravel.com/",
+    "capturedOn": "2026-10-16",
+    "desktop": {
+      "src": "/assets/previews/ap-signature-desktop.mp4",
+      "poster": "/assets/previews/ap-signature-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 973415,
+      "duration": 14.125,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/ap-signature-mobile.mp4",
+      "poster": "/assets/previews/ap-signature-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 1297079,
+      "duration": 14.125,
+      "optimized": true
+    }
+  }
+}

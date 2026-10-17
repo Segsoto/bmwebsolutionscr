@@ -62,7 +62,6 @@
   const title = chat.querySelector('[data-guide-title]');
   const description = chat.querySelector('[data-guide-description]');
   const includes = chat.querySelector('[data-guide-includes]');
-  const details = chat.querySelector('#chat-details');
   const whatsappLinks = [...chat.querySelectorAll('.guide-whatsapp')];
   const robot = chat.querySelector('.bm-robot');
   let topic = '';
@@ -116,7 +115,6 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) setOpen(false); });
   const updateMessage = () => {
    let message = text('Hola, me gustaría conversar con ustedes sobre ', 'Hi, I’d like to talk with your team about ') + (recommendations[topic]?.message || text('mi negocio', 'my business')) + '.';
-   if (details.value.trim()) message += '\n\n' + text('Mi negocio y mi idea: ', 'My business and idea: ') + details.value.trim();
    const target = 'https://wa.me/50660233159?text=' + encodeURIComponent(message);
    whatsappLinks.forEach(link => { link.href = target; });
   };
@@ -130,7 +128,6 @@
    title.textContent = recommendation.title;
    description.textContent = recommendation.description;
    includes.replaceChildren(...recommendation.includes.map(value => { const li = document.createElement('li'); li.textContent = value; return li; }));
-   chat.querySelector('.guide-more').open = false;
    updateMessage();
    title.focus({ preventScroll: true });
    panel.scrollTop = 0;
@@ -144,7 +141,6 @@
    panel.scrollTop = 0;
    choices[0]?.focus({ preventScroll: true });
   });
-  details.addEventListener('input', updateMessage);
   updateMessage();
 
   // Pointer tracking writes at most once per frame. Touch uses the greeting pose.

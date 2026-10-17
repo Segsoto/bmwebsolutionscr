@@ -5,6 +5,8 @@
  const active = new Set();
  const targets = [...document.querySelectorAll('main h1,.section-head h2,.people-intro h2,.cta h2,.faq-layout h2,.hero-intro')];
  const animated = new WeakSet();
+ let previousScroll=scrollY,scrollDirection=1;
+ window.addEventListener('scroll',()=>{if(scrollY!==previousScroll)scrollDirection=scrollY>previousScroll?1:-1;previousScroll=scrollY;},{passive:true});
  const finish = () => { active.forEach(animation => animation.finish()); active.clear(); };
  const play = (element, frames, options) => {
   const animation = element.animate(frames, options);
@@ -13,7 +15,15 @@
   return animation;
  };
  function reveal(heading) {
-  if (animated.has(heading) || paused() || !Element.prototype.animate) return;
+  if (paused() || !Element.prototype.animate) return;
+  if(animated.has(heading)) {
+   heading.getAnimations({subtree:true}).forEach(animation=>animation.cancel());
+   heading.querySelectorAll('.motion-piece').forEach((word,index)=>play(word,[
+    {opacity:0,transform:`translateY(${scrollDirection*85}%)`,filter:'blur(3px)'},
+    {opacity:1,transform:'translateY(0)',filter:'blur(0)'}
+   ],{duration:560,delay:Math.min(index*35,210),easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'}));
+   return;
+  }
   animated.add(heading);
   const reader = document.createElement('span');
   reader.className = 'motion-reader';
@@ -60,28 +70,19 @@
  }
  try {
   if ('IntersectionObserver' in window) {
+   const visible=new WeakSet();
    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-    if (!entry.isIntersecting) return;
-    reveal(entry.target);observer.unobserve(entry.target);
+    if (!entry.isIntersecting) {visible.delete(entry.target);return;}
+    if(entry.intersectionRatio<.15||visible.has(entry.target))return;
+    visible.add(entry.target);reveal(entry.target);
    }),{threshold:.15,rootMargin:'0px 0px -20px 0px'});
    targets.forEach(element=>observer.observe(element));
   } else targets.forEach(reveal);
-  const toggle=document.querySelector('.motion-toggle');
-  const english=document.documentElement.lang==='en';
   const update=()=>{
    if (paused()) finish();
-   if (toggle) {
-    toggle.setAttribute('aria-pressed',String(paused()));
-    toggle.disabled=preference.matches;
-    toggle.textContent=preference.matches?(english?'Reduced motion enabled':'Movimiento reducido activo'):paused()?(english?'Enable animations':'Activar animaciones'):(english?'Pause animations':'Pausar animaciones');
-   }
    document.dispatchEvent(new CustomEvent('bm:motion-change'));
   };
-  toggle?.addEventListener('click',()=>{
-   if (preference.matches) return;
-   document.documentElement.dataset.motion=paused()?'active':'paused';update();
-  });
-  preference.addEventListener('change',()=>{update();});
+  preference.addEventListener('change',update);
   document.addEventListener('visibilitychange',()=>{if(document.hidden) finish();});
   document.addEventListener('focusin',event=>{if(event.target.closest('.text-composed')) finish();});
   update();

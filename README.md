@@ -8,15 +8,15 @@ El repositorio de GitHub es `Segsoto/bmwebsolutionscr`. Vercel genera las págin
 
 La cuenta de Vercel es `segsoto`, con el equipo `brandon-s-projects-cc03ed1c` (Brandon 's projects). La web de producción está en https://www.bmwebsolutionscr.com y el proyecto está conectado a GitHub para desplegar los cambios de `main` automáticamente. Antes de operar desde la terminal, comprobar que `vercel whoami` muestre `segsoto` y seleccionar ese equipo.
 
-El contenido de los servicios, soluciones, proyectos y plantillas se define en `generate.cjs`. La portada, navegación, invitación a reservar, tarjetas de proyectos y formulario se definen en `experience.cjs`. Los estilos y la interacción compartida están en `dist/styles.css` y `dist/app.js`. Las capturas y los demás recursos están en `dist/assets/`. Antes de subir cambios, ejecutar `node generate.cjs` y `node check.cjs`.
+El contenido de los servicios, soluciones, proyectos y plantillas se define en `generate.cjs`. La portada, navegación, invitación a reservar, tarjetas de proyectos y contacto directo se definen en `experience.cjs`. Los estilos y la interacción compartida están en `dist/styles.css` y `dist/app.js`. Las capturas y los demás recursos están en `dist/assets/`. Antes de subir cambios, ejecutar `node generate.cjs` y `node check.cjs`.
 
 ## Experiencia y recorrido de reserva
 
 Dirección visual: estudio digital de Costa Rica, con fondos claros, azul de marca, acentos verdes y tipografía Manrope / DM Sans. La portada presenta una pieza interactiva para explorar diseño web, software y soporte de TI. El diseño web muestra un proyecto real; el software se identifica como ejemplo visual y la pestaña de TI explica el alcance del servicio.
 
-El recorrido prioriza objetivos del cliente, proyectos reales, proceso de trabajo, equipo, preguntas frecuentes y solicitud de sesión. La navegación y la barra inferior móvil mantienen visible la acción de reservar. Las llamadas de cada objetivo y servicio preseleccionan la solución en el formulario.
+El recorrido prioriza objetivos del cliente, proyectos reales, proceso de trabajo, equipo, preguntas frecuentes y solicitud de sesión. La navegación y la barra inferior móvil mantienen visible WhatsApp. Las llamadas de cada objetivo, servicio, proyecto y plantilla abren una conversación con un mensaje contextual.
 
-La reserva es una **solicitud por WhatsApp**, con nombre, necesidad, descripción y fecha/horario preferidos opcionales. El correo es opcional. No existe calendario de disponibilidad ni confirmación automática: el visitante envía la solicitud y el equipo coordina la cita. El formulario valida los datos, rechaza fechas anteriores al día actual en Costa Rica y ofrece un enlace alternativo si el navegador bloquea la apertura de WhatsApp. Los datos no se guardan en el sitio.
+El contacto abre **WhatsApp directamente**, sin formularios, campos obligatorios ni pasos de validación. Los mensajes están preparados por servicio y el visitante decide si los edita y envía. Si se necesita una sesión, se coordina en la conversación; no existe confirmación automática. Los enlaces funcionan sin JavaScript.
 
 La imagen principal `featured-web.webp` es una versión optimizada de la captura real de Fuck Face (132 KB). El resto de las capturas se carga de forma diferida. Las pestañas admiten flechas, Home y End; el menú se cierra con Escape. Se respeta la preferencia de movimiento reducido.
 
@@ -29,8 +29,8 @@ La franja de confianza de la portada muestra ocho negocios reales con enlaces a 
 - Soluciones para sitios de presentación, sitios de crecimiento, tiendas en línea y software a medida, sin precios publicados.
 - Equipo actual: Brandon Soto, Manfred Zuñiga y Brandon Garro.
 - Logotipo, fotografía y capturas reales de AlmaBela, Abogados de la Guácima, Charlie Mensajería, CR Granimar, La Camisa del 10, AroArte, AP Signature Travel y Fuck Face. El Sistema de Barbería muestra su pantalla pública de acceso. Barber Magic CR conserva su aviso de vista previa pendiente. Los videos originales permanecen como recursos, sin reproducirse en la nueva portada.
-- Bot flotante con seis opciones de consulta, campo para añadir contexto y enlaces a WhatsApp.
-- Formulario accesible de solicitud de sesión, con servicio preseleccionado, preferencia de fecha y horario, validación y mensaje preparado para WhatsApp. El visitante revisa y envía el mensaje desde WhatsApp; la sesión se confirma con el equipo.
+- Bot flotante con seis opciones de orientación y mensajes preparados para WhatsApp, sin campos de texto.
+- Página de contacto con acceso principal a WhatsApp y seis accesos por necesidad. El visitante revisa y envía el mensaje desde WhatsApp; cualquier sesión se coordina con el equipo.
 
 ## Fuentes y decisiones
 
@@ -52,12 +52,12 @@ La rama `main` publica el sitio en `www.bmwebsolutionscr.com` mediante la conexi
 
 ## Oferta de TI para negocios
 
-Se incorporó la propuesta de equipo de TI externo en español e inglés: soporte puntual, acompañamiento mensual y proyectos tecnológicos. La portada presenta la oferta junto con los servicios web existentes; servicios y soluciones explican el alcance y el proceso. El formulario incluye las consultas de TI. Los horarios, visitas y tiempos de respuesta se acuerdan por servicio; no se publican precios ni soporte ilimitado.
+Se incorporó la propuesta de equipo de TI externo en español e inglés: soporte puntual, acompañamiento mensual y proyectos tecnológicos. La portada presenta la oferta junto con los servicios web existentes; servicios y soluciones explican el alcance y el proceso. Los accesos a WhatsApp incluyen consultas de TI. Los horarios, visitas y tiempos de respuesta se acuerdan por servicio; no se publican precios ni soporte ilimitado.
 
 
 ## Presentación y contacto
 
-La página usa descripciones concretas de desarrollo web, software y soporte de TI en ambos idiomas. El bot flotante conserva su personaje SVG, saludo, parpadeo y seguimiento del cursor. Ofrece seis opciones de consulta y prepara un mensaje para WhatsApp, con posibilidad de añadir contexto. No envía mensajes por sí solo. Los iconos de navegación son SVG. La portada muestra capturas reales, sin efectos de profundidad ni destellos. Las animaciones del bot se conservan y respetan movimiento reducido. Se conserva el carrusel de clientes, con pausa al interactuar y compatibilidad con movimiento reducido.
+La página usa descripciones concretas de desarrollo web, software y soporte de TI en ambos idiomas. El bot flotante conserva su personaje SVG, saludo, parpadeo y seguimiento del cursor. Ofrece seis opciones de consulta y prepara un mensaje para WhatsApp, sin pedir datos en el sitio. No envía mensajes por sí solo. Los iconos de navegación son SVG. La portada muestra capturas reales, sin efectos de profundidad ni destellos. Las animaciones del bot se conservan y respetan movimiento reducido. Se conserva el carrusel de clientes, con pausa al interactuar y compatibilidad con movimiento reducido.
 
 ## Iconos, información y movimiento
 
@@ -65,8 +65,37 @@ El icono de WhatsApp se sirve sin modificar desde el paquete oficial de Meta (Di
 
 Los favicons de 16, 32, 180, 192 y 512 píxeles y el archivo ICO se derivan del monograma del logotipo existente. El manifiesto usa la identidad de BM.
 
-Privacidad y condiciones están enlazadas desde el pie en ambos idiomas. El formulario requiere consentimiento para atender la consulta e incluye ese consentimiento en el mensaje preparado. Sin JavaScript se ofrecen enlaces directos de contacto para evitar enviar campos por GET. Las páginas describen el funcionamiento actual; su publicación no certifica cumplimiento legal ni sustituye una revisión jurídica. Referencia de protección de datos: https://formatos.inamu.go.cr/SIDOC/DOCS/ley_8968.pdf
+Privacidad y condiciones están enlazadas desde el pie en ambos idiomas. La política describe el contacto directo por WhatsApp y la información compartida en esa conversación. Sin JavaScript se conservan los enlaces de contacto. Las páginas describen el funcionamiento actual; su publicación no certifica cumplimiento legal ni sustituye una revisión jurídica. Referencia de protección de datos: https://formatos.inamu.go.cr/SIDOC/DOCS/ley_8968.pdf
 
 El generador emite `dist/404.html` para la respuesta 404 automática de Vercel, además de una versión inglesa en `dist/en/404.html`. La vista previa también devuelve HTTP 404 en rutas inexistentes. Se generan sitemap y robots, y las páginas 404 llevan noindex.
 
-Los titulares se revelan por palabras con máscara, perspectiva y desenfoque. El acento de la portada aparece por caracteres. Las animaciones usan Web Animations API, se ejecutan una sola vez al entrar en pantalla y no necesitan bibliotecas. El texto conserva una versión accesible y funciona sin JavaScript. Se respeta movimiento reducido y el pie permite pausar animaciones. El bot conserva sus animaciones originales.
+Los titulares se revelan por palabras con máscara, perspectiva y desenfoque. El acento de la portada aparece por caracteres. Las animaciones usan Web Animations API, se ejecutan una sola vez al entrar en pantalla y no necesitan bibliotecas. El texto conserva una versión accesible y funciona sin JavaScript. Se respeta movimiento reducido según la preferencia de movimiento del sistema. El bot conserva sus animaciones originales.
+
+## Contacto directo y SEO
+
+Los llamados comerciales usan WhatsApp +506 6023 3159. Los enlaces de navegación, proyectos externos y documentos siguen sirviendo para explorar el sitio. El correo se conserva para consultas de privacidad. No hay formularios ni campos de texto, tampoco dentro del asistente. Las opciones del bot ofrecen orientación opcional; su botón principal abre WhatsApp.
+
+Se añaden cuatro páginas de servicios en ambos idiomas: diseño web, tiendas virtuales, software a medida y soporte TI. Cada una explica el alcance, la forma de trabajo, una pregunta habitual y servicios relacionados. Se enlazan desde servicios y entre ellas; los objetivos de inicio enlazan a su página correspondiente.
+
+`seo.cjs` genera títulos y descripciones específicos, canonical, hreflang es/en/x-default, Open Graph y tarjetas sociales. Los datos JSON-LD describen Organization, WebSite, WebPage/ContactPage/CollectionPage, BreadcrumbList y Service donde corresponde. No se inventan dirección, horarios, precios, calificaciones ni resultados. La imagen social local mide 1200 × 630. Las fuentes se cargan con un enlace en el encabezado y preconnect, sin importación CSS anidada.
+
+El sitemap incluye las 24 páginas indexables y sus alternativas de idioma. Las dos páginas 404 tienen noindex y no entran en el sitemap. `node check.cjs` comprueba enlaces, metadatos, datos estructurados y cobertura del sitemap.
+
+Después de publicar: enviar `https://www.bmwebsolutionscr.com/sitemap.xml` a la propiedad verificada en Google Search Console, inspeccionar las páginas nuevas y revisar consultas, impresiones y clics. Validar datos estructurados con Rich Results Test. La publicación, la verificación de Search Console y la indexación no se realizan al generar los archivos locales. No se garantizan posiciones.
+
+Referencias oficiales:
+- https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+- https://developers.google.com/search/docs/specialty/international/localized-versions
+- https://developers.google.com/search/docs/appearance/structured-data/organization
+
+## Ajustes de interacción del navegador
+
+Se retiraron la nota de revisión del mensaje en contacto y en el asistente, y el botón para pausar animaciones. Instagram, Facebook y WhatsApp muestran sus logos junto a etiquetas legibles. Las preguntas frecuentes usan despliegue y cierre animados con controles nativos de teclado; sin JavaScript conservan su funcionamiento. Las tarjetas y los titulares se animan al entrar en pantalla tanto al bajar como al subir; solo se reactivan después de salir del área visible. La marca vuelve al inicio mediante una transición entre documentos; en la propia portada sube suavemente sin recargar. Todos estos movimientos respetan la preferencia de movimiento reducido del sistema.
+
+## Videos reales de proyectos
+
+La portada y ocho proyectos usan grabaciones públicas de sus sitios: Fuck Face, AlmaBela, Abogados de la Guácima, Charlie Mensajería, CR Granimar, La Camisa del 10, AroArte y AP Signature Travel. Cada proyecto tiene versiones de escritorio y móvil, de aproximadamente 14 segundos, con un recorrido hacia abajo y de regreso al inicio. En páginas extensas se muestran las primeras cinco alturas de pantalla para conservar una presentación breve.
+
+Los archivos H.264/MP4 optimizados y las portadas JPG viven en `dist/assets/previews/`. `recordings.json` registra URL, tamaño, duración y fecha de captura; `project-media.cjs` genera la presentación. Se puede alternar entre escritorio y móvil y pausar cada video. Se descargan al entrar en pantalla y se detienen fuera de ella, al ocultar la pestaña o al cambiar la pestaña del showcase. Movimiento reducido y ahorro de datos muestran la portada, con reproducción voluntaria. Sin JavaScript se mantienen la portada y el enlace al proyecto.
+
+Barber Magic no resolvió DNS durante la captura. El sistema de barbería solo ofrece una página pública de inicio de sesión sin recorrido; ambos conservan su presentación anterior. La leyenda inferior «EJEMPLO VISUAL / SOFTWARE A MEDIDA» se retiró; la maqueta de software sigue identificada como ejemplo.

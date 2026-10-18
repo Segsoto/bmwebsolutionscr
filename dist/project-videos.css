@@ -19,8 +19,8 @@
 .demo-stage:has(.demo-panel:not([hidden]) .project-film){height:430px}
 .demo-browser>.preview-controls{padding:3px 7px;background:#f5f6f8}
 .demo-panel:has(.project-film) .demo-sticker{display:none}
-.demo-panel:has(.project-film) .demo-caption{bottom:-3px}
+
 @media(max-width:1150px){.demo-stage:has(.demo-panel:not([hidden]) .project-film){height:365px}.demo-browser.is-mobile-preview .project-film{height:250px}.preview-controls button{font-size:.6rem;gap:4px;padding-inline:7px}}
 @media(max-width:930px){.demo-stage:has(.demo-panel:not([hidden]) .project-film){height:330px}.demo-browser.is-mobile-preview .project-film{height:220px}}
-@media(max-width:760px){.project-visual:has(.project-film){aspect-ratio:1.12;padding:14px 14px 56px}.project-preview.is-mobile-preview .project-visual{aspect-ratio:.72}.project-preview>.preview-controls{left:14px;right:14px;bottom:7px}.preview-controls button{min-height:44px;padding:7px 9px;font-size:.65rem}.demo-browser.is-mobile-preview .project-film{height:330px}.demo-stage:has(.demo-panel:not([hidden]) .project-film){height:440px}.demo-browser>.preview-controls{padding:3px 4px}.demo-panel:has(.project-film) .demo-caption{bottom:1px}}
+@media(max-width:760px){.project-visual:has(.project-film){aspect-ratio:1.12;padding:14px 14px 56px}.project-preview.is-mobile-preview .project-visual{aspect-ratio:.72}.project-preview>.preview-controls{left:14px;right:14px;bottom:7px}.preview-controls button{min-height:44px;padding:7px 9px;font-size:.65rem}.demo-browser.is-mobile-preview .project-film{height:330px}.demo-stage:has(.demo-panel:not([hidden]) .project-film){height:440px}.demo-browser>.preview-controls{padding:3px 4px}}
 @media(max-width:380px){.demo-browser.is-mobile-preview .project-film{height:300px}.demo-stage:has(.demo-panel:not([hidden]) .project-film){height:410px}.preview-controls button{font-size:.6rem;gap:4px;padding-inline:7px}}

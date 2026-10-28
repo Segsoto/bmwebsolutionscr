@@ -71,14 +71,14 @@
   "https://charliemensajeria.com/index.html": {
     "slug": "charlie",
     "url": "https://charliemensajeria.com/index.html",
-    "capturedOn": "2026-10-16",
+    "capturedOn": "2026-10-21",
     "desktop": {
       "src": "/assets/previews/charlie-desktop.mp4",
       "poster": "/assets/previews/charlie-desktop.jpg",
       "width": 960,
       "height": 600,
-      "bytes": 1024150,
-      "duration": 14.291666666666666,
+      "bytes": 1023607,
+      "duration": 14.88,
       "optimized": true
     },
     "mobile": {
@@ -86,22 +86,22 @@
       "poster": "/assets/previews/charlie-mobile.jpg",
       "width": 390,
       "height": 844,
-      "bytes": 1056839,
-      "duration": 14.291666666666666,
+      "bytes": 805466,
+      "duration": 14.83,
       "optimized": true
     }
   },
   "https://www.granimarcr.com/": {
     "slug": "granimar",
     "url": "https://www.granimarcr.com/",
-    "capturedOn": "2026-10-16",
+    "capturedOn": "2026-10-21",
     "desktop": {
       "src": "/assets/previews/granimar-desktop.mp4",
       "poster": "/assets/previews/granimar-desktop.jpg",
       "width": 960,
       "height": 600,
-      "bytes": 1317236,
-      "duration": 14.208333333333334,
+      "bytes": 893643,
+      "duration": 14.96,
       "optimized": true
     },
     "mobile": {
@@ -109,8 +109,8 @@
       "poster": "/assets/previews/granimar-mobile.jpg",
       "width": 390,
       "height": 844,
-      "bytes": 1469525,
-      "duration": 14.208333333333334,
+      "bytes": 632904,
+      "duration": 14.5,
       "optimized": true
     }
   },
@@ -180,6 +180,29 @@
       "height": 844,
       "bytes": 1297079,
       "duration": 14.125,
+      "optimized": true
+    }
+  },
+  "https://www.gygautomotriz.com/": {
+    "slug": "gyg-automotriz",
+    "url": "https://www.gygautomotriz.com/",
+    "capturedOn": "2026-10-27",
+    "desktop": {
+      "src": "/assets/previews/gyg-automotriz-desktop.mp4",
+      "poster": "/assets/previews/gyg-automotriz-desktop.jpg",
+      "width": 960,
+      "height": 600,
+      "bytes": 1573652,
+      "duration": 13.833333333333334,
+      "optimized": true
+    },
+    "mobile": {
+      "src": "/assets/previews/gyg-automotriz-mobile.mp4",
+      "poster": "/assets/previews/gyg-automotriz-mobile.jpg",
+      "width": 390,
+      "height": 844,
+      "bytes": 1526941,
+      "duration": 13.791666666666666,
       "optimized": true
     }
   }

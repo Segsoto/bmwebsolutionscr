@@ -94,11 +94,11 @@ Se retiraron la nota de revisión del mensaje en contacto y en el asistente, y e
 
 ## Videos reales de proyectos
 
-La portada y ocho proyectos usan grabaciones públicas de sus sitios: Fuck Face, AlmaBela, Abogados de la Guácima, Charlie Mensajería, CR Granimar, La Camisa del 10, AroArte y AP Signature Travel. Cada proyecto tiene versiones de escritorio y móvil, de aproximadamente 14 segundos, con un recorrido hacia abajo y de regreso al inicio. En páginas extensas se muestran las primeras cinco alturas de pantalla para conservar una presentación breve.
+La portada y nueve proyectos usan grabaciones públicas de sus sitios: Fuck Face, AlmaBela, Abogados de la Guácima, Charlie Mensajería, CR Granimar, GyG Automotriz, La Camisa del 10, AroArte y AP Signature Travel. Cada proyecto tiene versiones de escritorio y móvil, de aproximadamente 14 segundos, con un recorrido hacia abajo y de regreso al inicio. En páginas extensas se muestran las primeras cinco alturas de pantalla para conservar una presentación breve.
 
 Los archivos H.264/MP4 optimizados y las portadas JPG viven en `dist/assets/previews/`. `recordings.json` registra URL, tamaño, duración y fecha de captura; `project-media.cjs` genera la presentación. Se puede alternar entre escritorio y móvil y pausar cada video. Se descargan al entrar en pantalla y se detienen fuera de ella, al ocultar la pestaña o al cambiar la pestaña del showcase. Movimiento reducido y ahorro de datos muestran la portada, con reproducción voluntaria. Sin JavaScript se mantienen la portada y el enlace al proyecto.
 
-Barber Magic no resolvió DNS durante la captura. El sistema de barbería solo ofrece una página pública de inicio de sesión sin recorrido; ambos conservan su presentación anterior. La leyenda inferior «EJEMPLO VISUAL / SOFTWARE A MEDIDA» se retiró; la maqueta de software sigue identificada como ejemplo.
+GyG Automotriz se incorporó el 27 de octubre de 2026 con recorridos de escritorio y móvil, en español e inglés. Su tarjeta sustituye a Barber Magic CR, cuyo dominio no se renovó. El sistema de barbería solo ofrece una página pública de inicio de sesión sin recorrido y conserva su presentación anterior. La leyenda inferior «EJEMPLO VISUAL / SOFTWARE A MEDIDA» se retiró; la maqueta de software sigue identificada como ejemplo.
 
 ## Modo oscuro y luz del robot
 

@@ -20,7 +20,7 @@ El contacto abre **WhatsApp directamente**, sin formularios, campos obligatorios
 
 La imagen principal `featured-web.webp` es una versión optimizada de la captura real de Fuck Face (132 KB). El resto de las capturas se carga de forma diferida. Las pestañas admiten flechas, Home y End; el menú se cierra con Escape. Se respeta la preferencia de movimiento reducido.
 
-La franja de confianza de la portada muestra ocho negocios reales con enlaces a sus webs en otra pestaña, en ambos idiomas. Se mueve continuamente con un bucle sin salto y sin flechas de navegación. No muestra controles y se detiene al explorar con el cursor, mientras se toca, fuera de pantalla y al ocultar la pestaña. Con teclado o movimiento reducido muestra la lista original con scroll horizontal y enlaces accesibles. Sin JavaScript también conserva los enlaces y el scroll.
+La franja de confianza de la portada muestra nueve negocios reales, incluido GyG Automotriz, con enlaces a sus webs en otra pestaña, en ambos idiomas. Se mueve continuamente con un bucle sin salto y sin flechas de navegación. No muestra controles y se detiene al explorar con el cursor, mientras se toca, fuera de pantalla y al ocultar la pestaña. Con teclado o movimiento reducido muestra la lista original con scroll horizontal y enlaces accesibles. Sin JavaScript también conserva los enlaces y el scroll.
 
 ## Alcance
 

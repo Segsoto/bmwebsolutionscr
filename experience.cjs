@@ -27,7 +27,7 @@ module.exports = ({ t, url, wa, arrow, button, textLink, external, projects, rou
   }
 
   function clientsSlider() {
-    const order = ['AlmaBela CR', 'CR Granimar', 'Abogados de la Guácima', 'La Camisa del 10', 'AroArte', 'Fuck Face', 'Charlie Mensajería', 'AP Signature Travel'];
+    const order = ['AlmaBela CR', 'CR Granimar', 'Abogados de la Guácima', 'La Camisa del 10', 'AroArte', 'Fuck Face', 'Charlie Mensajería', 'AP Signature Travel', 'GyG Automotriz'];
     const clients = order.map(name => projects().find(project => project[0] === name)).filter(Boolean);
     return `<section class="clients" id="clientes" data-client-slider aria-label="${t('Negocios que han confiado en nosotros','Businesses that have trusted us')}"><div class="wrap client-slider"><p class="client-slider-intro">${t('Negocios que han<br>confiado en nosotros','Businesses that have<br>trusted us')}</p><div class="client-slider-window" id="client-slides"><ul class="client-slider-track">${clients.map(p=>`<li class="client-slide"><a href="${p[2]}" target="_blank" rel="noopener noreferrer" aria-label="${t('Visitar el sitio de ','Visit the website of ')+p[0]}"><span>${p[0]}</span><span class="client-slide-arrow" aria-hidden="true">${arrow}</span></a></li>`).join('')}</ul></div></div></section>`;
   }

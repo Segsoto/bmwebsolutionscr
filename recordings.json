@@ -192,8 +192,8 @@
       "poster": "/assets/previews/gyg-automotriz-desktop.jpg",
       "width": 960,
       "height": 600,
-      "bytes": 1573652,
-      "duration": 13.833333333333334,
+      "bytes": 1612717,
+      "duration": 13.875,
       "optimized": true
     },
     "mobile": {
@@ -201,9 +201,10 @@
       "poster": "/assets/previews/gyg-automotriz-mobile.jpg",
       "width": 390,
       "height": 844,
-      "bytes": 1526941,
-      "duration": 13.791666666666666,
+      "bytes": 1508635,
+      "duration": 13.708333333333334,
       "optimized": true
-    }
+    },
+    "capturedAt": "2026-10-28T00:13:20.618Z"
   }
 }
